@@ -12,7 +12,7 @@
 
 #### Models
 
-See [DAG](https://github.com/maxlee85/jaffle_shop/blob/main/etc/dag.png)
+See [DAG](https://github.com/maxlee85/super/blob/main/etc/dag.png)
 
 Each of the seed files were used to create a stg_table where some columns were renamed, cast or added.
 
