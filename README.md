@@ -61,6 +61,8 @@ An example for customer_id = 1:
 | 5cf635ed248224ca81ab832c73a4b06e | 1           | 2021-04-01T00:00:00 | false     | 2021-01-01        |           | 338.83         | 1             | 4                   |
 | 835a11b66f96d36967a6e8650c94e22c | 1           | 2021-05-01T00:00:00 | false     | 2021-01-01        |           | 338.83         | 1             | 5                   |
 
+Keeping with the star schema, you can join dim_customers to fct_customer_cohorts_by_month on customer_id to enable slicing across the customer dimension. This can be managed within a bi tool (example shown in question 1) or joining the two tables together while querying directly.
+
 #### Customer Retention Rate
 
 In fct_customer_cohorts_pivoted, I flattened the fct_customer_cohorts_by_month table into 1 row per customer with each month being a column with value 1 if that customer made a purchase in that month.
@@ -93,5 +95,5 @@ group by
 To account for the introduction of a subscription model I would:
 
 1. Add `subscription_id` to `fct_order_line` (assuming orders created via subscription will have a subscription_id) and booleans to indicate if an order is related to a subscription.
-2. Create `subscription` (type 1 scd) and `subscription_history` (type 2 scd) models
+2. Create `dim_subscription` (type 1 scd) and `dim_subscription_history` (type 2 scd) models
 3. Create a model to track monthly recurring revenue (ie fct_mrr, grain `subscription_id` x `month`)
