@@ -19,7 +19,8 @@ Each of the seed files were used to create a stg_table where some columns were r
 There are 3 dimension tables, customer, product and vendor. I introduced the use of -1 values for surrogate_keys to identify when those are not present. For the purposes of this exercise all dimensions are type 1.
 Though things like customer and product should be type 2 dimensions so there needs to be a dim_customer_history, dim_product_history, etc... tables created to track changes over time.
 
-fct_order_line is setup as a transactional fact in a star schema with surrogate keys to the 3 dimension tables with the grain of 1 row per order line. This table can be queried directly or via a bi tool (ie looker) to enable slicing across dimensions.
+fct_order_line is setup as a transactional fact in a star schema with surrogate keys to the 3 dimension tables with the grain of 1 row per order line. This table can be queried directly or via a bi tool (ie looker) to enable slicing across dimensions. This table can be used to answer any questions Beth might have about orders.
+
 For simplicity in calculating refunded amounts I assumed if there was a refund all items were refunded and created a net_price column which is equal to the total_price of each item.
 I did not create a orders dimension and just placed all important columns in fct_order_line, but could see the need for a separate orders dimension table as additional data is generated.
 
