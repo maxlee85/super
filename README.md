@@ -34,6 +34,20 @@ explore: orders
     join: dim_vendor { type: xxx relationship: many_to_one sql_on: xxx ;; }
 ```
 
+Or a query like this to count orders by customer state:
+```
+select
+    d.state,
+    count(distinct f.order_id) as number_of_orders
+
+from
+    fct_order_line f
+    join dim_customers d on f.customer_id = d.customer_id
+
+group by
+    1
+```
+
 fct_orders_by_month is a periodic snapshot with period of month to track kpis. See table below:
 
 | month      | number_of_orders | number_of_refunds | gross_merchandise_value | average_order_value | average_basket_size | active_customers |
