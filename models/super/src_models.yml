@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: super
+    description: the seed data can be found here
+    database: ???
+    schema: ???
+    tables:
+      - name: customer
+      - name: order
+      - name: order_line
+      - name: product
+      - name: vendor

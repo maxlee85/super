@@ -1,0 +1,11 @@
+id,name,gender,email,state,country,created_at
+1,Harry Styles,M,hstyles@gmail.com,Florida,US,2021-01-03 6:36:00
+2,Britney Spears,M,bspears@hotmail.com,Louisiana,US,2021-01-15 14:56:00
+3,Justin Timberlake,M,timberlake@hotmail.com,Georgia,US,2021-01-25 15:31:00
+4,Ariana Grande,F,grande@hotmail.com,Florida,US,2021-02-03 11:26:00
+5,Lady Gaga,F,gaga@gmail.com,Montana,US,2021-02-12 23:13:00
+6,Jennifer Lopez,F,lopez@gmail.com,Alabama,US,2021-02-23 7:00:00
+7,Taylor Swift,F,swift@live.com,Hawaii,US,2021-03-01 14:22:00
+8,Prince,M,prince@hotmail.com,Texas,US,2021-03-03 23:22:00
+9,Michael Jackson,M,mj@live.com,Ohio,US,2021-03-04 2:46:00
+10,Katy Perry,F,perry@gmail.com,California,US,2021-03-09 1:23:00
