@@ -16,8 +16,7 @@ See [DAG](https://github.com/maxlee85/super/blob/main/etc/dag.png)
 
 Each of the seed files were used to create a stg_table where some columns were renamed, cast or added.
 
-There are 3 dimension tables, customer, product and vendor. I introduced the use of -1 values for surrogate_keys to identify when those are not present. For the purposes of this exercise all dimensions are type 1.
-Though things like customer and product should be type 2 dimensions so there needs to be a dim_customer_history, dim_product_history, etc... tables created to track changes over time.
+There are 3 dimension tables, customer, product and vendor. I introduced the use of -1 values for surrogate_keys to identify when those are not present. For the purposes of this exercise all dimensions are type 1, though things like customer and product should be type 2 dimensions so there needs to be a dim_customer_history, dim_product_history, etc... tables created to track changes over time. I added a ltv calculation and first order date onto dim_customer for easier slicing (and also because I assumed a customer can be created without an order, although the sample data the customer created date is equal to the first order date).
 
 fct_order_line is setup as a transactional fact in a star schema with surrogate keys to the 3 dimension tables with the grain of 1 row per order line. This table can be queried directly or via a bi tool (ie looker) to enable slicing across dimensions. This table can be used to answer any questions Beth might have about orders.
 
